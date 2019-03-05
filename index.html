@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/bin/Bootstrap/css/bootstrap.min.css  ">
+    <script src="/bin/fullcalendar.min.js"></script>
+    <script src="/bin/CalendarData/CalendarData.js"></script>   
+    <script src="/bin/jquery.min.js"></script>
+<!-- <script src="/bin/popper.min.js"></script> -->
+    <script src="/bin/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>  
+    <script src="/bin/ShopItemData/AccessoriesData.js"></script> 
+    <link href="/bin/fullcalendar.min.css" rel="stylesheet" /> 
+    <style>
+body {
+  background-color:black;
+}
+.navbar-brand {
+  display:block;
+  position:absolute;
+  left: 40%; 
+  top:10%;
+  z-index: 10;
+}
+@media (max-width: 780px){
+.navbar-brand {
+  left: 30vw; 
+  top:5%;
+ }}
+
+.navbar-brand span {
+  font-size:60px;
+  font-weight:300; 
+  color:white;
+  font-family:fantasy;
+}
+#imageCarousel {
+  margin:0px;
+  padding:0px;
+/*   width:100vw; */
+}
+.navbar-default {
+  border-color:transparent;
+  border-width:0px;
+}
+nav a {
+  color:white;
+}
+.carousel-caption {
+  position:absolute;
+  bottom:60%;
+  top:40%;
+}
+nav span {
+  font-size:18px;
+}
+h4 {
+  color:white;
+}
+ #calendar {
+     width:800px;
+     margin-left:auto;
+     margin-right:auto;
+     border-style: outset ;
+     border-color:grey;
+     border-width: 4px;
+     background-color:rgb(189, 236, 185);
+     padding-top:60px;
+    }
+  #item-list {
+      background-color:white;
+      z-index:100;
+      overflow-y:scroll;
+      height:600px;
+    }
+  #shopping-cart-list {
+      background-color:white;
+      z-index:100;
+      overflow-y:scroll;
+      height:600px;
+  }
+  #shop-page img {
+      width:100px;
+      height:100px;
+      object-fit:cover;
+      border:1px solid lightgrey;
+    }
+    #shop-page .container {
+      width:100%;
+      height:auto;
+      background-color:rgba(192, 243, 192, 0.918);
+      padding-right:50px;
+      padding-left:30px;
+    }
+    #shop-page span {
+      font-size:14px;
+    }
+    .item-row, .cart-item-row {
+      margin:5px;
+    }
+    .span-group, .cart-span-group {
+      display:inline-block;
+      padding-left:5px;
+    }
+    .img-row, .cart-img-row {
+      display:inline-block;
+      vertical-align:top;
+    }
+    .remove-button {
+      color:red;
+      font-size:14px;
+    }
+    #cart-total span{
+      font-size:20px;
+      font-weight:500;
+    }
+    #shopping-cart {
+      padding-right:10px;
+    }
+  #fancy-line{
+    overflow: visible;
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+#fancy-line::after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+}
+#shopping-cart h3 {text-align: center;} 
+.box-textshadow {
+     text-shadow: 
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+/* .navbar-collapse.in {
+
+    margin-top: 50px;
+    margin-left: 70%;
+
+} */
+    </style>
+    <title>Shopping Site</title>
+  </head>
+  <body>
+     <div class="container">
+      <div class="row">
+        <div class="col-lg-12"> 
+           <nav class="navbar  navbar-default navbar-fixed-top" style="background-color: transparent">
+            <button type="button" style="background-color:lightgrey;z-index:1000;opacity:0.8" class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-collapse collapse">
+                  <ul class="nav">
+                        <li class="navbar-left" style="color:rgba(222, 184, 135, 0.788)">
+                          <a href="#" >
+                            <span class="glyphicon glyphicon-home left"></span><span> Home</span>
+                          </a>
+                        </li>
+                        <li class="navbar-left">
+                            <a href="#contact" >
+                                <span class="glyphicon glyphicon-earphone"></span><span> Contact</span>
+                            </a>
+                        </li>
+                        <li class="navbar-right" style="margin-right:5px">
+                                <a href="#calendar-page">
+                                    <span class="glyphicon glyphicon-calendar"></span><span> Calendar</span>
+                                </a>
+                        </li>
+                        <li class="navbar-right">
+                            <a href="#shop-page" >
+                                <span class="glyphicon glyphicon-shopping-cart"></span><span> Shop</span>
+                            </a>
+                      </li>
+                </ul>
+            </div>
+            <div class="navbar-brand">
+                    <span class="box-textshadow ">My Store</span>
+            </div>
+           </nav>
+         </div>
+      </div>
+    </div> 
+<!--    Begin Home Section -->
+    <div id="imageCarousel" class="carousel slide" data-interval="4000" data-pause="false" data-ride="carousel"> 
+        <div class="carousel-inner" >
+          <div class="item active">
+            <img src="bin/Images/VariousImages/first.jpg" class="img-responsive" style="width:100vw">
+            <div class="carousel-caption">
+                      <h1>Example photo header</h1>
+                      <p>Example photo description</p>
+            </div>
+          </div>
+          <div class="item"> <!--   width:100vw -->
+              <img src="bin/Images/VariousImages/second.jpg" class="img-responsive" style="width:100vw">
+              <div class="carousel-caption">
+                      <h1>Example photo header</h1>
+                      <p>Example photo description</p>
+              </div>
+          </div>
+          <div class="item">
+            <img src="bin/Images/VariousImages/fourth.jpg" class="img-responsive" style="width:100vw">
+            <div class="carousel-caption">
+                    <h1>Example photo header</h1>
+                    <p>Example photo description</p>
+            </div>
+          </div>
+        </div>
+        <a href="#imageCarousel" class="carousel-control left hidden-xs" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="#imageCarousel" class="carousel-control right hidden-xs" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div> <!-- End image carousel -->
+<!--     End Home Section -->
+
+<!--     Begin Contact Section -->
+    <div id="contact"  style="position:relative;width:100vw;height:auto">
+    <img src="bin/Images/VariousImages/fifth.jpg" style="width:100vw;height: 800px;object-fit: cover;">
+    <div class="container">
+      <div class = "row" style="z-index: 20;position:relative;margin-top:-55%">
+        <div class ="col-sm-5" >
+              <div>
+                  <h4>Phone 928-249-2164</h4>
+                  <h4>Email steinmetzdenver@gmail.com</h4>
+                  <h4>Address: xxxxxxxxxxxxxxx</h4>
+              </div>
+        </div>
+        <div class ="col-sm-7 hidden-xs">
+            <iframe width="400" height="300" frameborder="0" src="https://www.bing.com/maps/embed?h=300&w=400&cp=28.77839999999999~-81.2676&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
+            </iframe>
+            <div style="white-space: nowrap; text-align: center; width: 400px; padding: 6px 0;">
+                <a id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=28.77839999999999~-81.2676&amp;sty=r&amp;lvl=11&amp;FORM=MBEDLD">Display a larger map</a> &nbsp; | &nbsp;
+                <a id="dirMapLink" target="_blank" href="https://www.bing.com/maps/directions?cp=28.77839999999999~-81.2676&amp;sty=r&amp;lvl=11&amp;rtp=~pos.28.77839999999999_-81.2676____&amp;FORM=MBEDLD">Calculate an itinerary</a>
+            </div>
+        </div>
+      </div> <!-- end row -->
+    </div> <!-- end contactContainer -->
+    </div><!--  end contact div -->
+  <!--     End Contact Section -->
+
+    <!--     Begin Calendar Section --> 
+  <div id="calendar-page">
+    <div id="calendar" style="z-index: 20"></div>
+    <div id="tooltip-event" style=" visibility:hidden"></div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    let temp = testFunction();
+    let calendarEl = document.getElementById('calendar');
+    let calendar = new FullCalendar.Calendar(calendarEl, {
+          defaultView: 'month',
+          editable:true,
+          selectable:true,
+          eventLimit:false,
+          slotEventOverlap: true,
+          header: {
+                    left:"prev,next today",
+                    center: "title",
+                    right:"month, agendaWeek"
+                  },
+          events: testFunction(), 
+          eventMouseEnter: function(enterMouseInfo){
+             let mouseX = event.pageX  ;
+             let mouseY = event.pageY + 20  ;
+             let popupTitle = enterMouseInfo.event._def.title;
+             let popupDescription = enterMouseInfo.event._def.extendedProps.description;
+             let tooltip = document.getElementById("tooltip-event");
+             tooltip.style.visibility="visible";
+             tooltip.style.zIndex="1000";
+             tooltip.style.position="absolute";
+             tooltip.style.width="200px";
+             tooltip.style.height="200px";
+             tooltip.style.backgroundColor="#f0f0f0";
+             tooltip.style.cursor="pointer";
+             tooltip.style.opacity="0.9";
+             tooltip.style.borderRadius="5px";
+             tooltip.style.border="1px solid black";
+             tooltip.style.top = mouseY + "px";
+             tooltip.style.left = mouseX + "px"; 
+/*              tooltip.style.top = '"' + mouseY + 'px"';
+             tooltip.style.left = '"' + mouseX + 'px"';  */
+             tooltip.innerHTML=popupTitle + "<br>" + popupDescription },
+             eventMouseLeave:function(event, jsEvent, view){
+              let tooltip = document.getElementById("tooltip-event");
+              tooltip.style.visibility="hidden";
+              tooltip.style.cursor="default";
+             },
+   
+      });
+    calendar.render();
+   
+    });
+    </script>
+  </div>  <!-- End Calendar Page -->
+ 
+      <!--     Begin Shop Section --> 
+  <div id="shop-page" style="width:100vw">
+    <div class="container">
+      <div class="row" style="margin-top:70px;border-style:inset;border-color:lightgrey;border-width:4px">
+        <div class="col-sm-6" id="item-list">
+        </div>
+        <div class="col-sm-6" id="shopping-cart-list">
+          <div id="shopping-cart">
+              <h3 >Your Shopping Cart</h3>
+              <hr id="fancy-line"></hr>
+          </div>
+          <div id="cart-total">
+            <hr style="border-top: 1px solid #333;margin-right:10px"></hr>
+            <span>Total Purchase: $</span><span id="total-purchase"></span>
+            <div id="test-div"></div>
+            <!--***********google form container****** -->
+            <div class="form-container">
+                <form name="gform" id="gform" enctype="text/plain"  action="https://docs.google.com/forms/d/e/1FAIpQLSc7rtVng25ALoFQW1Hd51N0UKsTcBIVFKQL03i5NHLj5NYocg/formResponse?" target="hidden_iframe" >
+                  First Name:<br>
+                  <input type="text" name="entry.2005620554" id="entry.2005620554" style="width:200px" placeholder="Enter your first name" required><br>
+                  Last Name:<br>
+                  <input type="text" name="entry.1610227697" id="entry.1610227697" style="width:250px" placeholder="Enter your last name" required><br>
+                  Email:<br>
+                  <input type="email" name="entry.1045781291" id="entry.1045781291" style="width:300px" placeholder="Enter your email address" required><br>
+                  Shipping Address:<br>
+                  <input type="text" name="entry.1065046570" id="entry.1065046570" style="width:600px" placeholder="Enter your shipping address" required><br>
+                  Phone:<br>
+                  <input type="number" name="entry.1166974658" id="entry.1166974658" style="width:200px" placeholder="Enter your phone number" required><br>
+                  <textarea style="display:none" name="entry.839337160" id="entry.839337160" ></textarea><br>
+                  <script>
+                      function doFade(){
+                          let name = document.getElementById("entry.2005620554").value.toUpperCase(); 
+                          $("#gform").fadeOut(2000);
+                          $("#response").html('<h2 style="text-align:center"> Thank you ' + name + ', you will receive an email invoice with shipping costs applied shortly. <h2>');
+                      } 
+                    function getPurchaseSummary(){
+                      let cartRows = $(".cart-item-row");
+                      let price="";
+                      let quantity="";
+                      let description="";
+                      let itemID="";
+                      let priceObj = {};
+                      let priceArray = [];
+                      let totalSaleObj = {};
+                      for (let i=0;i<cartRows.length;i++)
+                          {   
+                              let cartRow = cartRows[i];
+                              price = cartRow.getElementsByClassName("cart-price")[0].innerText;
+                              quantity = cartRow.getElementsByClassName("quantity")[0].value;
+                              description = cartRow.getElementsByClassName("cart-item-description")[0].innerText;
+                              itemID = cartRow.getElementsByClassName("cart-item-id")[0].innerText;
+                              priceObj = {ID:itemID,Description:description,Quantity:quantity,price:price}
+                              priceArray.push(priceObj);
+                        }
+                        let totalPrice = document.getElementById("total-purchase").innerText;
+                        totalSaleObj = {TotalSale:totalPrice};
+                        priceArray.push(totalSaleObj);
+                        let sendStr = JSON.stringify(priceArray);
+                        $("textarea").text(sendStr);
+                        setTimeout(doFade(),4000);
+                    }
+                  </script>
+                  <input type="submit" value="Request Invoice" onclick="getPurchaseSummary()">
+                </form>
+            </div>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+            <div id="response"></div>
+            <!--*********** end google form container****** -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function(){
+      //*************load item photos from file*******
+     accessoryPhotos.forEach(function(item){
+       let imageRow = '<div class="img-row"> <img src="' + item.url +  '" class="row-image"></div>';
+       let spanDescription = '<span class="item-description">' + item.description + '</span>' + '<br>';
+       let spanId = '<span class="item-id">Item# ' + item.id + ' </span>' + '<br>';
+       let spanPrice = '<span>$</span>' + '<span class="item-price">' + item.price + ' </span>' + '<br>';
+       let addToCartButton = '<button class="add-to-cart-button" type="button"> Add To Cart </button>';
+       let spanGroup = '<div class="span-group">' +  spanDescription + spanId + spanPrice + addToCartButton + '</div>';
+       let divRow = '<div class="item-row">' + imageRow + spanGroup + '</div>';
+       $("#item-list").append(divRow);
+       }); // end load item photos from file************
+
+       // ************begin item image mouseover event*************
+       $("#item-list").on(
+         {mouseover:function(){
+           $(this).animate({"height":"400px","width":"400px","transition":"0.3"}, 1000)}
+         ,
+          mouseout:function(){
+           $(this).animate({"height":"100px","width":"100px"}, 1000)}
+         }
+       , ".row-image");  
+       // **************end item image mouseover event*****************
+
+      //*****check if item is already in cart***************
+        function checkCartItemExists(newItem){
+          let cartRows = $(".cart-item-row");
+          let proceed = true;
+         for (let i=0;i<cartRows.length;i++)
+         {   
+            let cartRow = cartRows[i];
+            let rowID = cartRow.getElementsByClassName("cart-item-id")[0].innerText;
+            if (rowID == newItem) {proceed = false}
+         } return proceed;}
+
+      // ****************** begin add to shopping cart **************
+       $("#item-list").on({"click":function(){addToShoppingCart(event)}},".add-to-cart-button" );
+
+        function addToShoppingCart(event)
+         {
+          let buttonClicked = event.target;
+          let rowGroup = buttonClicked.parentElement.parentElement;
+          let price = rowGroup.getElementsByClassName("item-price")[0].innerText;
+          let itemID = rowGroup.getElementsByClassName("item-id")[0].innerText;
+          let description = rowGroup.getElementsByClassName("item-description")[0].innerText;
+          let imageURL = rowGroup.getElementsByClassName("row-image")[0].src;
+                //****if item already in shopping cart send alert*****
+                if(checkCartItemExists(itemID)){
+                let imageRow = '<div class="cart-img-row"> <img src="' + imageURL +  '" class="cart-row-image"></div>';
+                let spanDescription = '<span class="cart-item-description">' + description + '</span>' + '<br>';
+                let spanId = '<span class="cart-item-id">' + itemID + ' </span>' + '<br>';
+                 let spanPrice = '<span>$</span>' + '<span class="cart-price">' + price + '</span>' + '<span>, Quantity: </span>' + '<input class="quantity" " type="number" value="1" style="width:30px;font-size:12px;text-align:right"/> <br>';
+                let removeButton = '<button class="remove-button" type="button"> Remove </button>';
+                let spanGroup = '<div class="cart-span-group">' +  spanDescription + spanId + spanPrice + removeButton + '</div>';
+                let divRow = '<div class="cart-item-row">' + imageRow + spanGroup + '</div>';
+                $("#shopping-cart").append(divRow);
+                updateTotal();
+                }
+                else {alert("You have already added this item to your shopping cart")}
+                //******end if item already in shopping cart alert****
+         } 
+         // ************* end add to shopping cart****************
+        //**************** begin remove item from shopping cart*************8         
+       $("#shopping-cart").on({"click":function(){removeShoppingCart(event)}},".remove-button" );
+
+       function removeShoppingCart(event){
+         let removeButton = event.target;
+         let removeItem = removeButton.parentElement.parentElement;
+         $(removeItem).remove();
+         updateTotal();
+        }
+        //****************** end remove item from shopping cart************
+        //************** begin change quantity input event handler*********
+        $("#shopping-cart").on({"change":function(){changeQuantity(event)}},".quantity" );   
+
+        function changeQuantity(event)
+         {   input = event.target;
+             if ((input.value==" ") || (input.value <=0))
+             {   alert("Please select a quantity greater than 0")
+                 input.value = 1;
+             }
+             updateTotal()
+         }
+        //**************** end change quantity input event handler*********
+        //********** begin update total purchase price*******************
+        function updateTotal(){
+          let totalPrice = 0;
+          let quantity = 1;
+          let cartRows = $(".cart-item-row");
+         for (let i=0;i<cartRows.length;i++)
+         {   
+            let cartRow = cartRows[i];
+            let price = parseFloat(cartRow.getElementsByClassName("cart-price")[0].innerText);
+            quantity = parseInt(cartRow.getElementsByClassName("quantity")[0].value);
+            totalPrice = totalPrice + (price*quantity);  
+            totalPrice = Math.round(totalPrice*100)/100;  
+         }
+         $("#total-purchase").text(totalPrice)}
+        //************** end update total purchase price********
+      }); //end document ready
+
+ </script>
+ 
+</div>  <!-- End Shop Page -->
+
+<!-- <img src="bin/Images/VariousImages/fifth.jpg" style="width:100vw">
+<img src="bin/Images/VariousImages/fifth.jpg" style="width:100vw"> -->
+
+
+
+ </body>
+</html>
