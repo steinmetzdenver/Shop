@@ -1,0 +1,81 @@
+    let producePhotos= 
+    [{
+        id: 1,
+        description:"Not Real Item",
+        url:"../Images/ProduceImages/produce1.jpg",
+        divClass:"vertical",
+        price: 100,
+      },    
+      {
+        id: 2,
+        description:"Not Real Item",
+        url:"../Images/ProduceImages/produce2.jpg",
+        divClass:"horizontal",
+        price: 100,
+      },    
+      {
+        id: 3,
+        description:"Not Real Item",
+        url:"../Images/ProduceImages/produce3.jpg",
+        divClass:"",
+        price: 100,
+      },    
+      {
+        id: 4,
+        description:"Not Real Item0",
+        url:"../Images//ProduceImages/produce4.jpg",
+        divClass:"vertical",
+        price: 100,
+      },    
+      {
+        id: 5,
+        description:"Not Real Item",
+        url:"../Images/ProduceImages/produce5.jpg",
+        divClass:"big",
+        price: 100,
+      },    
+      {
+        id: 6,
+        description:"Not Real Item",
+        url:"../Images/ProduceImages/produce6.jpg",
+        divClass:"",
+        price: 100,
+      },    
+      {
+        id: 7,
+        description:"Not Real Item",
+        url:"../Images/ProduceImages/produce7.jpg",
+        divClass:"vertical",
+        price: 100,
+      },    
+      {
+        id: 8,
+        description:"Not Real Item",
+        url:"../Images/ProduceImages/produce8.jpg",
+        divClass:"big",
+        price: 100,
+      },    
+      {
+        id: 9,
+        description:"Not Real Item",
+        url:"../Images/ProduceImages/produce9.jpg",
+        divClass:"horizontal",
+        price: 100,
+      },    
+      {
+        id: 10,
+        description:"Not Real Item",
+        url:"../Images/ProduceImages/produce10.jpg",
+        divClass:"",
+        price: 100,
+      },    
+      {
+        id: 11,
+        description:"Not Real Item",
+        url:"../Images/ProduceImages/produce11.jpg",
+        divClass:"big",
+        price: 100,
+      },   
+    ];
+
+

@@ -1,0 +1,81 @@
+    let accessoryPhotos= 
+    [{
+        id:1,
+        description:"Not Real Item",
+        url:"bin/Images/AccessoriesImages/access1.jpg",
+        divClass:"vertical",
+        price:99.99,
+      },    
+      {
+        id:2,
+        description:"Not Real Item",
+        url:"bin/Images/AccessoriesImages/access2.jpg",
+        divClass:"big",
+        price:100.99,
+      },    
+      {
+        id:3,
+        description:"Not Real Item",
+        url:"bin/Images/AccessoriesImages/access3.jpg",
+        divClass:"big",
+        price:100,
+      },    
+      {
+        id:4,
+        description:"Not Real Item",
+        url:"bin/Images/AccessoriesImages/access4.jpg",
+        divClass:"vertical",
+        price:100,
+      },    
+      {
+        id:5,
+        description:"Not Real Item",
+        url:"bin/Images/AccessoriesImages/access5.jpg",
+        divClass:"vertical",
+        price:100,
+      },    
+      {
+        id:6,
+        description:"Not Real Item",
+        url:"bin/Images/AccessoriesImages/access6.jpg",
+        divClass:"",
+        price:100,
+      },    
+      {
+        id:7,
+        description:"Not Real Item",
+        url:"bin/Images/AccessoriesImages/access7.jpg",
+        divClass:"",
+        price:100,
+      },    
+      {
+        id:8,
+        description:"Not Real Item",
+        url:"bin/Images/AccessoriesImages/access8.jpg",
+        divClass:"big",
+        price:100,
+      },    
+      {
+        id:9,
+        description:"Not Real Item",
+        url:"bin/Images/AccessoriesImages/access9.jpg",
+        divClass:"horizontal",
+        price:100,
+      },    
+      {
+        id:10,
+        description:"Not Real Item",
+        url:"bin/Images/AccessoriesImages/access10.jpg",
+        divClass:"big",
+        price:100,
+      },    
+      {
+        id:11,
+        description:"Not Real Item",
+        url:"bin/Images/AccessoriesImages/access11.jpg",
+        divClass:"horizontal",
+        price:100,
+      },   
+    ];
+
+
