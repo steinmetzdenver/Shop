@@ -1,0 +1,130 @@
+body {
+  background-color:black;
+}
+.navbar-brand {
+  display:block;
+  position:absolute;
+  left: 40%; 
+  top:10%;
+  z-index: 10;
+}
+@media (max-width: 780px){
+.navbar-brand {
+  left: 30vw; 
+  top:5%;
+ }}
+
+.navbar-brand span {
+  font-size:60px;
+  font-weight:300; 
+  color:white;
+  font-family:fantasy;
+}
+#imageCarousel {
+  margin:0px;
+  padding:0px;
+/*   width:100vw; */
+}
+.navbar-default {
+  border-color:transparent;
+  border-width:0px;
+}
+nav a {
+  color:white;
+}
+.carousel-caption {
+  position:absolute;
+  bottom:60%;
+  top:40%;
+}
+nav span {
+  font-size:18px;
+}
+h4 {
+  color:white;
+}
+ #calendar {
+     width:800px;
+     margin-left:auto;
+     margin-right:auto;
+     border-style: outset ;
+     border-color:grey;
+     border-width: 4px;
+     background-color:rgb(189, 236, 185);
+     padding-top:60px;
+    }
+  #item-list {
+      background-color:white;
+      z-index:100;
+      overflow-y:scroll;
+      height:600px;
+    }
+  #shopping-cart-list {
+      background-color:white;
+      z-index:100;
+      overflow-y:scroll;
+      height:600px;
+  }
+  #shop-page img {
+      width:100px;
+      height:100px;
+      object-fit:cover;
+      border:1px solid lightgrey;
+    }
+    #shop-page .container {
+      width:100%;
+      height:auto;
+      background-color:rgba(192, 243, 192, 0.918);
+      padding-right:50px;
+      padding-left:30px;
+    }
+    #shop-page span {
+      font-size:14px;
+    }
+    .item-row, .cart-item-row {
+      margin:5px;
+    }
+    .span-group, .cart-span-group {
+      display:inline-block;
+      padding-left:5px;
+    }
+    .img-row, .cart-img-row {
+      display:inline-block;
+      vertical-align:top;
+    }
+    .remove-button {
+      color:red;
+      font-size:14px;
+    }
+    #cart-total span{
+      font-size:20px;
+      font-weight:500;
+    }
+    #shopping-cart {
+      padding-right:10px;
+    }
+  #fancy-line{
+    overflow: visible;
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+#fancy-line::after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+}
+#shopping-cart h3 {text-align: center;} 
+.box-textshadow {
+     text-shadow: 
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
