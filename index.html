@@ -57,23 +57,20 @@
 <!--    Begin Home Section -->
     <div id="imageCarousel" class="carousel slide" data-interval="4000" data-pause="false" data-ride="carousel"> 
         <div class="carousel-inner" >
-          <div class="item active">
-            <img src="bin/Images/VariousImages/first.jpg" class="img-responsive" style="width:100vw">
+          <div class="item active" style="background-image: url(bin/Images/VariousImages/first.jpg)">
             <div class="carousel-caption">
                       <h1>Example photo header</h1>
                       <p>Example photo description</p>
             </div>
           </div>
-          <div class="item"> 
-              <img src="bin/Images/VariousImages/second.jpg" class="img-responsive" style="width:100vw">
-              <div class="carousel-caption">
+          <div class="item"  style="background-image: url(bin/Images/VariousImages/second.jpg)"> 
+             <div class="carousel-caption">
                       <h1>Example photo header</h1>
                       <p>Example photo description</p>
               </div>
           </div>
-          <div class="item">
-            <img src="bin/Images/VariousImages/fourth.jpg" class="img-responsive" style="width:100vw">
-            <div class="carousel-caption">
+          <div class="item"  style="background-image: url(bin/Images/VariousImages/fourth.jpg)">
+          <div class="carousel-caption">
                     <h1>Example photo header</h1>
                     <p>Example photo description</p>
             </div>
@@ -89,10 +86,9 @@
 <!--     End Home Section -->
 
 <!--     Begin Contact Section -->
-    <div id="contact"  style="position:relative;width:100vw;height:auto">
-    <img src="bin/Images/VariousImages/fifth.jpg" style="width:100vw;height: 800px;object-fit: cover;">
+    <div id="contact"  > 
     <div class="container">
-      <div class = "row" style="z-index: 20;position:relative;margin-top:-55%">
+      <div class = "row" style="z-index: 20;position:relative;margin-top:20%"> 
         <div class ="col-sm-5" >
               <div>
                   <h4>Phone 928-249-2164</h4>
@@ -115,7 +111,7 @@
 
     <!--     Begin Calendar Section --> 
   <div id="calendar-page">
-    <div id="calendar" style="z-index: 20"></div>
+    <div id="calendar" style="z-index: 20;position:relative"></div>
     <div id="tooltip-event" style=" visibility:hidden"></div>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
