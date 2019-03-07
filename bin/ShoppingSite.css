@@ -23,8 +23,11 @@ body {
 #imageCarousel {
   margin:0px;
   padding:0px;
-/*   width:100vw; */
 }
+@media only screen and (min-width: 420px){
+#imageCarousel img {
+    height: 600px;
+}}
 .navbar-default {
   border-color:transparent;
   border-width:0px;
@@ -43,6 +46,18 @@ nav span {
 h4 {
   color:white;
 }
+#calendar-page {
+  background-image: url(/bin/Images/VariousImages/Clouds.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height:700px;
+}
  #calendar {
      width:800px;
      margin-left:auto;
@@ -53,6 +68,14 @@ h4 {
      background-color:rgb(189, 236, 185);
      padding-top:60px;
     }
+#contact {
+      background-image: url(/bin/Images/VariousImages/fifth.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height:700px;
+
+    }  
   #item-list {
       background-color:white;
       z-index:100;
